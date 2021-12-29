@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "916341468752",
+    "project_id": "appbiotapajos-3d160",
+    "storage_bucket": "appbiotapajos-3d160.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916341468752:android:445492442bd074f0356b55",
+        "android_client_info": {
+          "package_name": "com.app.biotapajos_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916341468752-pn6vjb8j2a84ajpagkr121no0dk2elr2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzSoX8WFaMegLNkxxYSySPVBWzkWugNSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916341468752-pn6vjb8j2a84ajpagkr121no0dk2elr2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916341468752:android:359cd0acf81eae1a356b55",
+        "android_client_info": {
+          "package_name": "com.app_biotapajos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916341468752-pn6vjb8j2a84ajpagkr121no0dk2elr2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzSoX8WFaMegLNkxxYSySPVBWzkWugNSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916341468752-pn6vjb8j2a84ajpagkr121no0dk2elr2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
