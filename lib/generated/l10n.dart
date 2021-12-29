@@ -585,6 +585,51 @@ class S {
     );
   }
 
+  String get specieSimilar {
+    return Intl.message(
+      'Specie Similar',
+      name: 'especieSimilar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get whereLive {
+    return Intl.message(
+      'Where Live',
+      name: 'ondeVive',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get nameCommon {
+    return Intl.message(
+      'Name Common',
+      name: 'nomeComum',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get family {
+    return Intl.message(
+      'Family',
+      name: 'familia',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get size {
+    return Intl.message(
+      'Size',
+      name: 'tamanho',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `still under construction`
   String get emConstrucao {
     return Intl.message(

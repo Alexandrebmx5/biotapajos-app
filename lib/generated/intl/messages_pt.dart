@@ -28,7 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "bemVindo" : MessageLookupByLibrary.simpleMessage("Bem Vindo"),
     "carregar" : MessageLookupByLibrary.simpleMessage("Carregando"),
     "catalago" : MessageLookupByLibrary.simpleMessage("Catálagos de Espécies"),
-    "comoConhecer" : MessageLookupByLibrary.simpleMessage("Como conhecer"),
+    "comoConhecer" : MessageLookupByLibrary.simpleMessage("Distribuição"),
     "coordenadas" : MessageLookupByLibrary.simpleMessage("Coordenadas"),
     "cor" : MessageLookupByLibrary.simpleMessage("Cor"),
     "criarUmaConta" : MessageLookupByLibrary.simpleMessage("Criar uma conta"),
@@ -77,6 +77,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "trilhas" : MessageLookupByLibrary.simpleMessage("Conheça as Ucs e Trilhas ecológicas"),
     "usuarioCriado" : MessageLookupByLibrary.simpleMessage("Usuario criado com sucesso"),
     "verLocalizacao" : MessageLookupByLibrary.simpleMessage("Ver Localização"),
-    "voceSabia" : MessageLookupByLibrary.simpleMessage("Você Sabia?")
+    "voceSabia" : MessageLookupByLibrary.simpleMessage("Você Sabia?"),
+    "ondeVive" : MessageLookupByLibrary.simpleMessage("Onde Vive"),
+    "especieSimilar" : MessageLookupByLibrary.simpleMessage("Espécie Similar"),
+    "nomeComum" : MessageLookupByLibrary.simpleMessage("Nome Comum"),
+    "familia" : MessageLookupByLibrary.simpleMessage("Família"),
+    "tamanho" : MessageLookupByLibrary.simpleMessage("Tamanho"),
   };
 }

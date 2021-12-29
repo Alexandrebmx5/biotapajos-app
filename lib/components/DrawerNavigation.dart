@@ -164,7 +164,7 @@ Drawer drawer({@required context}) {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            'v. 1.0.1+1',
+                            'v. 1.0.2',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 16),

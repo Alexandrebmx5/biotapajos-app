@@ -27,7 +27,7 @@ class _ListSpeciesState extends State<ListSpecies> {
   TextEditingController _search = TextEditingController();
   Stream _stream = null;
   String _currentLang;
-  String _field = 'name';
+  String _field = 'specie';
 
   Stream _getSpecies({String id}) {
     Stream result = _db
@@ -45,8 +45,8 @@ class _ListSpeciesState extends State<ListSpecies> {
     } else {
       switch (field) {
         case 'specie':
-          rawList.removeWhere((element) => element.name != null
-              ? !(element.name.toUpperCase().contains(query.toUpperCase()))
+          rawList.removeWhere((element) => element.specie != null
+              ? !(element.specie.toUpperCase().contains(query.toUpperCase()))
               : null);
           break;
 
@@ -167,7 +167,7 @@ class _ListSpeciesState extends State<ListSpecies> {
                             id: element.id,
                             name: element.data()['nome'],
                             specie: element.data()['specie'],
-                            active: element.data()['active'],
+                            activity: element.data()['activity'],
                             howKnow: element.data()['howKnow'],
                             lat: element.data()['lat'],
                             locations: element.data()['locations'],
@@ -177,7 +177,10 @@ class _ListSpeciesState extends State<ListSpecies> {
                             youKnow: element.data()['youKnow'],
                             img: element.data()['img'],
                             color: element.data()['color'],
-                            sound: element.data()['sound']);
+                            sound: element.data()['sound'],
+                            group: element.data()['group'],
+                            specieSimilar: element.data()['specie_similar'],
+                            whereLive: element.data()['where_live']);
 
                         speciesDetails.add(specieDetail);
                       } else {
@@ -185,7 +188,7 @@ class _ListSpeciesState extends State<ListSpecies> {
                             id: element.id,
                             name: element.data()['nome_en'],
                             specie: element.data()['specie_en'],
-                            active: element.data()['active_en'],
+                            activity: element.data()['activity_en'],
                             howKnow: element.data()['howKnow_en'],
                             lat: element.data()['lat'],
                             locations: element.data()['locations_en'],
@@ -195,7 +198,10 @@ class _ListSpeciesState extends State<ListSpecies> {
                             youKnow: element.data()['youKnow_en'],
                             img: element.data()['img'],
                             color: element.data()['color_en'],
-                            sound: element.data()['sound']);
+                            sound: element.data()['sound'],
+                            group: element.data()['group_en'],
+                            specieSimilar: element.data()['specie_similar_en'],
+                            whereLive: element.data()['where_live_en']);
 
                         speciesDetails.add(specieDetail);
                       }
@@ -258,7 +264,7 @@ class _ListSpeciesState extends State<ListSpecies> {
                                           fit: BoxFit.fill,
                                         ),
                                         title: Text(
-                                          speciesDetails[index].name,
+                                          speciesDetails[index].specie,
                                         ),
                                         subtitle: Padding(
                                           padding:

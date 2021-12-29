@@ -5,7 +5,7 @@ class SpecieDetail {
   String _howKnow;
   String _locations;
   String _reproduction;
-  String _active;
+  String _activity;
   String _id;
   String _name;
   String _lat;
@@ -13,6 +13,9 @@ class SpecieDetail {
   List _img;
   String _sound;
   String _color;
+  String _group;
+  String _specieSimilar;
+  String _whereLive;
 
   SpecieDetail(
       {String name,
@@ -22,13 +25,16 @@ class SpecieDetail {
       String howKnow,
       String locations,
       String reproduction,
-      String active,
+      String activity,
       String id,
       String lat,
       String long,
       List img,
       String sound,
-      String color}) {
+      String color,
+      String group,
+      String specieSimilar,
+      String whereLive}) {
     this._name = name;
     this._id = id;
     this._specie = specie;
@@ -37,12 +43,15 @@ class SpecieDetail {
     this._howKnow = howKnow;
     this._locations = locations;
     this._reproduction = reproduction;
-    this._active = active;
+    this._activity = activity;
     this._lat = lat;
     this._long = long;
     this._img = img;
     this.sound = sound;
     this._color = color;
+    this._group = group;
+    this._specieSimilar = specieSimilar;
+    this._whereLive = whereLive;
   }
 
   String get id => _id;
@@ -57,9 +66,9 @@ class SpecieDetail {
     _name = name;
   }
 
-  String get active => _active;
-  set active(String active) {
-    _active = active;
+  String get activity => _activity;
+  set activity(String activity) {
+    _activity = activity;
   }
 
   String get reproduction => _reproduction;
@@ -126,6 +135,24 @@ class SpecieDetail {
 
   set color(String color) {
     _color = color;
+  }
+
+  String get group => _group;
+
+  set group(String group) {
+    _group = group;
+  }
+
+  String get specieSimilar => _specieSimilar;
+
+  set specieSimilar(String specieSimilar) {
+    _specieSimilar = specieSimilar;
+  }
+
+  String get whereLive => _whereLive;
+
+  set whereLive(String whereLive) {
+    _whereLive = whereLive;
   }
 
 //end

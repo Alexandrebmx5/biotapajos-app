@@ -1,6 +1,7 @@
 import 'package:biotapajos_app/components/AppBar.dart';
 import 'package:biotapajos_app/components/DrawerNavigation.dart';
 import 'package:biotapajos_app/components/EasyLoading.dart';
+import 'package:biotapajos_app/components/Empty.dart';
 import 'package:biotapajos_app/generated/l10n.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -29,7 +30,7 @@ class _AboutUsState extends State<AboutUs> {
     return Scaffold(
       appBar: appBar(title: S.of(context).quemSomos),
       drawer: drawer(context: context),
-      body: body(),
+      body: bodyConstruction(),
     );
   }
 
@@ -77,6 +78,25 @@ class _AboutUsState extends State<AboutUs> {
             }
           }
         },
+      ),
+    );
+  }
+
+  Widget bodyConstruction() {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          notFinished(
+              height: MediaQuery.of(context).size.height * 0.15,
+              width: MediaQuery.of(context).size.height * 0.35),
+          Text(
+            S.of(context).emConstrucao,
+            style: TextStyle(fontSize: 16, color: Colors.grey[600]),
+          )
+        ],
       ),
     );
   }

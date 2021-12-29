@@ -1,12 +1,10 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:biotapajos_app/components/AppBar.dart';
-import 'package:biotapajos_app/components/Buttons.dart';
 import 'package:biotapajos_app/components/DrawerNavigation.dart';
 import 'package:biotapajos_app/components/Texts.dart';
 import 'package:biotapajos_app/generated/l10n.dart';
 import 'package:biotapajos_app/models/SpecieDetail.dart';
 import 'package:biotapajos_app/styles/Color.dart';
-import 'package:biotapajos_app/views/MapView.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -127,7 +125,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                             icon: Icon(
                               Icons.volume_up,
                               size: 30,
-                              color: PRIMARY,
+                              color: Colors.black,
                             )),
                       ),
                       Expanded(
@@ -135,7 +133,8 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                           child: Padding(
                             padding: const EdgeInsets.only(top: 16.0),
                             child: Text(
-                              specieDetail.family,
+                              specieDetail.specie,
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 24,
                                   color: bgCOLOR,
@@ -147,19 +146,39 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                     ],
                   ),
                 ),
-                Text(specieDetail.name,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black,
-                      decoration: TextDecoration.underline,
-                    )),
+                Padding(
+                  padding:
+                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                  child: Container(
+                      width: constraints.maxWidth,
+                      child: Row(
+                        children: [
+                          Text('${S.of(context).family} ', style: TextStyle(
+                          fontSize: 15, fontWeight: FontWeight.bold),),
+                          Text( specieDetail.family)
+                        ],
+                      )),
+                ),
+                Padding(
+                  padding:
+                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                  child: Container(
+                      width: constraints.maxWidth,
+                      child: Row(
+                        children: [
+                          Text('${S.of(context).nameCommon} ', style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold)),
+                          Text(specieDetail.name.isEmpty ? '...' : specieDetail.name)
+                        ],
+                      )),
+                ),
                 Padding(
                   padding:
                       const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          icon: Icon(Icons.help, color: PRIMARY),
+                          child: Icon(Icons.help, color: Colors.black),
                           text: S.of(context).voceSabia,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -178,7 +197,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          icon: Icon(Icons.public, color: PRIMARY),
+                          child: Image.asset('images/icon1.png', width: 30, height: 30,),
                           text: S.of(context).comoConhecer,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -188,7 +207,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                       const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
                   child: Container(
                     width: constraints.maxWidth,
-                    child: _textNullSafety(data: specieDetail.howKnow),
+                    child: _textNullSafety(data: specieDetail.locations),
                   ),
                 ),
                 Padding(
@@ -197,7 +216,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          icon: Icon(Icons.pest_control_rodent, color: PRIMARY),
+                          child: Image.asset('images/icon5.png', width: 30, height: 30,),
                           text: S.of(context).reproducao,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -207,7 +226,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                       const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
                   child: Container(
                     width: constraints.maxWidth,
-                    child: _textNullSafety(data: specieDetail.howKnow),
+                    child: _textNullSafety(data: specieDetail.reproduction),
                   ),
                 ),
                 Padding(
@@ -216,8 +235,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          icon: Icon(Icons.brightness_medium_sharp,
-                              color: PRIMARY),
+                          child: Image.asset('images/icon4.png', width: 30, height: 30,),
                           text: S.of(context).Atividade,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -227,7 +245,27 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                       const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
                   child: Container(
                     width: constraints.maxWidth,
-                    child: _textNullSafety(data: specieDetail.active),
+                    child: _textNullSafety(data: specieDetail.activity),
+                  ),
+                ),
+                Padding(
+                  padding:
+                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                  child: Container(
+                      width: constraints.maxWidth,
+                      child: textIcon(
+                          child: Icon(Icons.brightness_medium_sharp,
+                              color: Colors.black),
+                          text: S.of(context).size,
+                          style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold))),
+                ),
+                Padding(
+                  padding:
+                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                  child: Container(
+                    width: constraints.maxWidth,
+                    child: _textNullSafety(data: specieDetail.howKnow),
                   ),
                 ),
                 Padding(
@@ -236,17 +274,55 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          icon: Icon(Icons.invert_colors_on, color: PRIMARY),
+                          child: Icon(Icons.invert_colors_on, color: Colors.black),
                           text: S.of(context).cor,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0, bottom: 20),
+                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
                   child: Container(
                     width: constraints.maxWidth,
                     child: _textNullSafety(data: specieDetail.color),
+                  ),
+                ),
+                Padding(
+                  padding:
+                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                  child: Container(
+                      width: constraints.maxWidth,
+                      child: textIcon(
+                          child: Image.asset('images/icon3.png', width: 30, height: 30,),
+                          text: S.of(context).specieSimilar,
+                          style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold))),
+                ),
+                Padding(
+                  padding:
+                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                  child: Container(
+                    width: constraints.maxWidth,
+                    child: _textNullSafety(data: specieDetail.specieSimilar),
+                  ),
+                ),
+                Padding(
+                  padding:
+                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                  child: Container(
+                      width: constraints.maxWidth,
+                      child: textIcon(
+                          child: Image.asset('images/icon2.png', width: 30, height: 30,),
+                          text: S.of(context).whereLive,
+                          style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold))),
+                ),
+                Padding(
+                  padding:
+                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0, bottom: 20),
+                  child: Container(
+                    width: constraints.maxWidth,
+                    child: _textNullSafety(data: specieDetail.whereLive),
                   ),
                 ),
               ],

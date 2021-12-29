@@ -77,6 +77,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "trilhas" : MessageLookupByLibrary.simpleMessage("Meet the Ucs and Ecological Trails"),
     "usuarioCriado" : MessageLookupByLibrary.simpleMessage("User Created Successfully"),
     "verLocalizacao" : MessageLookupByLibrary.simpleMessage("See Location"),
-    "voceSabia" : MessageLookupByLibrary.simpleMessage("you knew it")
+    "voceSabia" : MessageLookupByLibrary.simpleMessage("you knew it"),
+    "ondeVive" : MessageLookupByLibrary.simpleMessage("Where Live"),
+    "especieSimilar" : MessageLookupByLibrary.simpleMessage("Specie Similar"),
+    "nomeComum" : MessageLookupByLibrary.simpleMessage("Name Common"),
+    "familia" : MessageLookupByLibrary.simpleMessage("Family"),
+    "tamanho" : MessageLookupByLibrary.simpleMessage("Size"),
   };
 }
