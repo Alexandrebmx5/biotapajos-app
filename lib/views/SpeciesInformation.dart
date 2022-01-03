@@ -159,19 +159,21 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                         ],
                       )),
                 ),
-                Padding(
-                  padding:
-                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
-                      width: constraints.maxWidth,
-                      child: Row(
-                        children: [
-                          Text('${S.of(context).nameCommon} ', style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold)),
-                          Text(specieDetail.name.isEmpty ? '...' : specieDetail.name)
-                        ],
-                      )),
-                ),
+                if(specieDetail.name != '')...[
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
+                        width: constraints.maxWidth,
+                        child: Row(
+                          children: [
+                            Text('${S.of(context).nameCommon} ', style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold)),
+                            Text(specieDetail.name.isEmpty ? '...' : specieDetail.name)
+                          ],
+                        )),
+                  ),
+                ],
                 Padding(
                   padding:
                       const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
