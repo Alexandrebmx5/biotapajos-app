@@ -199,7 +199,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Image.asset('images/icon1.png', width: 30, height: 30,),
+                          child: Icon(Icons.public, color: Colors.black,),
                           text: S.of(context).comoConhecer,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -218,7 +218,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Image.asset('images/icon5.png', width: 30, height: 30,),
+                          child: Image.asset('images/sapo.jpeg', width: 30, height: 30,),
                           text: S.of(context).reproducao,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -237,7 +237,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Image.asset('images/icon4.png', width: 30, height: 30,),
+                          child: Icon(Icons.brightness_medium_sharp, color: Colors.black,),
                           text: S.of(context).Atividade,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -256,8 +256,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Icon(Icons.brightness_medium_sharp,
-                              color: Colors.black),
+                          child: Image.asset('images/regua.png', width: 20, height: 25,),
                           text: S.of(context).size,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -295,7 +294,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Image.asset('images/icon3.png', width: 30, height: 30,),
+                          child: Image.asset('images/sapo2.jpeg', width: 30, height: 30,),
                           text: S.of(context).specieSimilar,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -314,7 +313,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Image.asset('images/icon2.png', width: 30, height: 30,),
+                          child: Image.asset('images/arvore.png', width: 30, height: 25,),
                           text: S.of(context).whereLive,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
