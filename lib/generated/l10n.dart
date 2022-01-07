@@ -668,6 +668,24 @@ class S {
     );
   }
 
+  String get venom {
+    return Intl.message(
+      'Venon',
+      name: 'veneno',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get dieta {
+    return Intl.message(
+      'Diet',
+      name: 'diata',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get nameCommon {
     return Intl.message(
       'Name Common',

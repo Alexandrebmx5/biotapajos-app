@@ -16,6 +16,8 @@ class SpecieDetail {
   String _group;
   String _specieSimilar;
   String _whereLive;
+  String _venom;
+  String _diet;
 
   SpecieDetail(
       {String name,
@@ -34,7 +36,9 @@ class SpecieDetail {
       String color,
       String group,
       String specieSimilar,
-      String whereLive}) {
+      String whereLive,
+      String venom,
+      String diet,}) {
     this._name = name;
     this._id = id;
     this._specie = specie;
@@ -52,6 +56,8 @@ class SpecieDetail {
     this._group = group;
     this._specieSimilar = specieSimilar;
     this._whereLive = whereLive;
+    this._venom = venom;
+    this._diet = diet;
   }
 
   String get id => _id;
@@ -153,6 +159,18 @@ class SpecieDetail {
 
   set whereLive(String whereLive) {
     _whereLive = whereLive;
+  }
+
+  String get venom => _venom;
+
+  set venom(String venom) {
+    _venom = venom;
+  }
+
+  String get diet => _diet;
+
+  set diet(String diet) {
+    _diet = diet;
   }
 
 //end

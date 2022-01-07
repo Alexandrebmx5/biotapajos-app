@@ -114,20 +114,22 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   width: constraints.maxWidth,
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 16.0, left: 16.0, bottom: 8.0),
-                        child: IconButton(
-                            alignment: Alignment.centerLeft,
-                            onPressed: () {
-                              _playSound();
-                            },
-                            icon: Icon(
-                              Icons.volume_up,
-                              size: 30,
-                              color: Colors.black,
-                            )),
-                      ),
+                      if(specieDetail.sound != null && specieDetail.sound != '')...[
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 16.0, left: 16.0, bottom: 8.0),
+                          child: IconButton(
+                              alignment: Alignment.centerLeft,
+                              onPressed: () {
+                                _playSound();
+                              },
+                              icon: Icon(
+                                Icons.volume_up,
+                                size: 30,
+                                color: Colors.black,
+                              )),
+                        ),
+                      ],
                       Expanded(
                         child: Center(
                           child: Padding(
@@ -218,7 +220,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Image.asset('images/sapo.jpeg', width: 30, height: 30,),
+                          child: Image.asset('images/reproducao.jpeg', width: 30, height: 30,),
                           text: S.of(context).reproducao,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -294,7 +296,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Image.asset('images/sapo2.jpeg', width: 30, height: 30,),
+                          child: Image.asset('images/semelhante.jpeg', width: 30, height: 30,),
                           text: S.of(context).specieSimilar,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -326,6 +328,48 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                     child: _textNullSafety(data: specieDetail.whereLive),
                   ),
                 ),
+                if(specieDetail.diet != null)...[
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
+                        width: constraints.maxWidth,
+                        child: textIcon(
+                            child: Image.asset('images/dieta.png', width: 30, height: 25,),
+                            text: S.of(context).dieta ?? '',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold))),
+                  ),
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0, bottom: 20),
+                    child: Container(
+                      width: constraints.maxWidth,
+                      child: _textNullSafety(data: specieDetail.diet),
+                    ),
+                  ),
+                ],
+                if(specieDetail.venom != null )...[
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
+                        width: constraints.maxWidth,
+                        child: textIcon(
+                            child: Image.asset('images/veneno.png', width: 30, height: 25,),
+                            text: S.of(context).venom ?? '',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold))),
+                  ),
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0, bottom: 20),
+                    child: Container(
+                      width: constraints.maxWidth,
+                      child: _textNullSafety(data: specieDetail.venom),
+                    ),
+                  ),
+                ]
               ],
             ),
           ),

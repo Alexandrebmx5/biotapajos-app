@@ -180,7 +180,10 @@ class _ListSpeciesState extends State<ListSpecies> {
                             sound: element.data()['sound'],
                             group: element.data()['group'],
                             specieSimilar: element.data()['specie_similar'],
-                            whereLive: element.data()['where_live']);
+                            whereLive: element.data()['where_live'],
+                            venom: element.data()['venom'],
+                            diet: element.data()['diet']
+                        );
 
                         speciesDetails.add(specieDetail);
                       } else {
@@ -201,7 +204,10 @@ class _ListSpeciesState extends State<ListSpecies> {
                             sound: element.data()['sound'],
                             group: element.data()['group_en'],
                             specieSimilar: element.data()['specie_similar_en'],
-                            whereLive: element.data()['where_live_en']);
+                            whereLive: element.data()['where_live_en'],
+                            venom: element.data()['venom_en'],
+                            diet: element.data()['diet_en']
+                        );
 
                         speciesDetails.add(specieDetail);
                       }

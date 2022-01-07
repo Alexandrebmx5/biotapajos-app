@@ -90,5 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "team" : MessageLookupByLibrary.simpleMessage("Conheça nossa equipe"),
     "colaboradores" : MessageLookupByLibrary.simpleMessage("Colaboradores"),
     "parceria" : MessageLookupByLibrary.simpleMessage("Instituíções parceiras"),
+    "veneno" : MessageLookupByLibrary.simpleMessage("Veneno"),
+    "dieta" : MessageLookupByLibrary.simpleMessage("Dieta"),
   };
 }
