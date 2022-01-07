@@ -1,8 +1,5 @@
 import 'package:biotapajos_app/components/AppBar.dart';
-import 'package:biotapajos_app/components/DrawerNavigation.dart';
 import 'package:biotapajos_app/components/EasyLoading.dart';
-import 'package:biotapajos_app/components/Empty.dart';
-import 'package:biotapajos_app/generated/l10n.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -28,9 +25,9 @@ class _AboutUsState extends State<AboutUs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(title: S.of(context).quemSomos),
-      drawer: drawer(context: context),
-      body: bodyConstruction(),
+      // TODO: EN E PT
+      appBar: appBar(title: 'Conheça o IAA'),
+      body: body(),
     );
   }
 
@@ -49,25 +46,31 @@ class _AboutUsState extends State<AboutUs> {
             DocumentSnapshot _doc = snapshot.data;
             if (snapshot.hasData) {
               String _text = '';
+              List _img = [];
               if (_currentLang == 'pt') {
-                _text = _doc.data()['pt'];
+                _img = _doc.data()['iaa_logo'];
+                _text = _doc.data()['iaa_pt'];
               } else {
-                _text = _doc.data()['en'];
+                _img = _doc.data()['iaa_logo'];
+                _text = _doc.data()['iaa_en'];
               }
               return SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset('images/logo_inst.png',
-                        height: MediaQuery.of(context).size.height * 0.30,
-                        width: MediaQuery.of(context).size.height * 0.30),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30),
+                      child: Image.network(_img[1],
+                          height: MediaQuery.of(context).size.height * 0.30,
+                          width: MediaQuery.of(context).size.height * 0.30),
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(
                           top: 64.0, left: 16, right: 16, bottom: 16),
                       child: Text(
                         _text,
                         textAlign: TextAlign.justify,
-                        style: TextStyle(fontSize: 14, letterSpacing: 1.2),
+                        style: TextStyle(fontSize: 14, letterSpacing: 1.0),
                       ),
                     )
                   ],
@@ -78,25 +81,6 @@ class _AboutUsState extends State<AboutUs> {
             }
           }
         },
-      ),
-    );
-  }
-
-  Widget bodyConstruction() {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          notFinished(
-              height: MediaQuery.of(context).size.height * 0.15,
-              width: MediaQuery.of(context).size.height * 0.35),
-          Text(
-            S.of(context).emConstrucao,
-            style: TextStyle(fontSize: 16, color: Colors.grey[600]),
-          )
-        ],
       ),
     );
   }

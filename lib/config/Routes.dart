@@ -1,4 +1,4 @@
-import 'package:biotapajos_app/views/AboutUs.dart';
+import 'package:biotapajos_app/views/about_us/AboutUs.dart';
 import 'package:biotapajos_app/views/Actualities.dart';
 import 'package:biotapajos_app/views/GetCoordinate.dart';
 import 'package:biotapajos_app/views/ListSpecies.dart';
@@ -10,6 +10,7 @@ import 'package:biotapajos_app/views/Register.dart';
 import 'package:biotapajos_app/views/Species.dart';
 import 'package:biotapajos_app/views/SpeciesInformation.dart';
 import 'package:biotapajos_app/views/Suggestions.dart';
+import 'package:biotapajos_app/views/about_us/submenus_about_us.dart';
 import 'package:biotapajos_app/views/ecological_trails/submenus_ecological_trails.dart';
 import 'package:biotapajos_app/views/home.dart';
 
@@ -30,7 +31,7 @@ routes() {
     '/profile': (context) => Profile(),
     '/trails': (context) => SubMenusEcologicalTrails(),
     '/actualities': (context) => Actualities(),
-    '/about': (context) => AboutUs(),
+    '/about': (context) => SubMenusAboutUs(),
     '/': (context) => InitialScreen(),
   };
 }
