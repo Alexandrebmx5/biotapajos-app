@@ -2,6 +2,7 @@ import 'package:biotapajos_app/components/AppBar.dart';
 import 'package:biotapajos_app/components/EasyLoading.dart';
 import 'package:biotapajos_app/generated/l10n.dart';
 import 'package:biotapajos_app/models/ucs.dart';
+import 'package:biotapajos_app/views/ecological_trails/ucs_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -101,13 +102,13 @@ class _ListUcsState extends State<ListUcs> {
                         children: [
                           ListTile(
                             onTap: () {
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //       builder: (context) => UcsScreen(
-                              //         ucs[index],
-                              //       )),
-                              // );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => UcsScreen(
+                                      ucs[index],
+                                    )),
+                              );
                             },
                             leading: Image.network(
                               ucs[index].img.first,
