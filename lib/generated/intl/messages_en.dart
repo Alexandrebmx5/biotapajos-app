@@ -75,6 +75,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "telefone" : MessageLookupByLibrary.simpleMessage("Phone"),
     "tenhoConta" : MessageLookupByLibrary.simpleMessage("Already registered"),
     "trilhas" : MessageLookupByLibrary.simpleMessage("Meet the Ucs and Ecological Trails"),
+    "trilhas ecologicas" : MessageLookupByLibrary.simpleMessage("Ecological Trails"),
+    "ucs" : MessageLookupByLibrary.simpleMessage("Meet the Ucs"),
     "usuarioCriado" : MessageLookupByLibrary.simpleMessage("User Created Successfully"),
     "verLocalizacao" : MessageLookupByLibrary.simpleMessage("See Location"),
     "voceSabia" : MessageLookupByLibrary.simpleMessage("Did You Know"),

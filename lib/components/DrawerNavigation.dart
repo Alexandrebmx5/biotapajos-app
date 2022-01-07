@@ -133,7 +133,7 @@ Drawer drawer({@required context}) {
                   ),
                   ListTile(
                     leading: Icon(
-                      Icons.search,
+                      Icons.person,
                       color: PRIMARY,
                     ),
                     title: Text(

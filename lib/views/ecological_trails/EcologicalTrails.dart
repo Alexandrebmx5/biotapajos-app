@@ -1,5 +1,4 @@
 import 'package:biotapajos_app/components/AppBar.dart';
-import 'package:biotapajos_app/components/DrawerNavigation.dart';
 import 'package:biotapajos_app/components/EasyLoading.dart';
 import 'package:biotapajos_app/generated/l10n.dart';
 import 'package:biotapajos_app/helper/LaunchUrl.dart';
@@ -34,8 +33,7 @@ class _EcologicalTrailsState extends State<EcologicalTrails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(title: S.of(context).trilhas),
-      drawer: drawer(context: context),
+      appBar: appBar(title: S.of(context).trilhasEcologicas),
       body: body(),
     );
   }

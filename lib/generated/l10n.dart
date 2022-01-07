@@ -185,6 +185,26 @@ class S {
     );
   }
 
+  /// `Meet the Ucs and Ecological Trails`
+  String get trilhasEcologicas {
+    return Intl.message(
+      'Ecological Trails',
+      name: 'trilhas ecologicas',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Meet the Ucs and Ecological Trails`
+  String get ucs {
+    return Intl.message(
+      'Meet the Ucs',
+      name: 'ucs',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `news and actualities`
   String get informe {
     return Intl.message(
