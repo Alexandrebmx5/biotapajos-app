@@ -1,5 +1,6 @@
 import 'package:biotapajos_app/components/AppBar.dart';
 import 'package:biotapajos_app/components/EasyLoading.dart';
+import 'package:biotapajos_app/generated/l10n.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -25,8 +26,7 @@ class _ListInstitutionsState extends State<ListInstitutions> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // TODO: EN E PT
-      appBar: appBar(title: 'Instituíções parceiras'),
+      appBar: appBar(title: S.of(context).parceria),
       body: body(),
     );
   }

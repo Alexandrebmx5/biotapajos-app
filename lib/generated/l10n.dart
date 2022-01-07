@@ -245,6 +245,51 @@ class S {
     );
   }
 
+  String get iaa {
+    return Intl.message(
+      'Meet our IAA',
+      name: 'iaa',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get nossaHistoria {
+    return Intl.message(
+      'Our Story',
+      name: 'nossaHistoria',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get team {
+    return Intl.message(
+      'Meet our team',
+      name: 'team',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get colaboradoes {
+    return Intl.message(
+      'Collaborators',
+      name: 'colaboradores',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get parceria {
+    return Intl.message(
+      'Partner institutions',
+      name: 'parceria',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// ` Make your Suggestion`
   String get hintSugestao {
     return Intl.message(

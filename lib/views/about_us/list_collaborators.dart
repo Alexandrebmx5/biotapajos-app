@@ -43,7 +43,7 @@ class _ListCollaboratorsState extends State<ListCollaborators> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: appBar(title: S.of(context).ucs), body: body());
+    return Scaffold(appBar: appBar(title: S.of(context).colaboradoes), body: body());
   }
 
   Widget body() {

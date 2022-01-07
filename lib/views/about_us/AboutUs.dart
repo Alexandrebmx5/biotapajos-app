@@ -1,5 +1,6 @@
 import 'package:biotapajos_app/components/AppBar.dart';
 import 'package:biotapajos_app/components/EasyLoading.dart';
+import 'package:biotapajos_app/generated/l10n.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -25,8 +26,7 @@ class _AboutUsState extends State<AboutUs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // TODO: EN E PT
-      appBar: appBar(title: 'Conheça o IAA'),
+      appBar: appBar(title: S.of(context).iaa),
       body: body(),
     );
   }

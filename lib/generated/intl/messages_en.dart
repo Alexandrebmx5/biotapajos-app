@@ -85,5 +85,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "nomeComum" : MessageLookupByLibrary.simpleMessage("Name Common"),
     "familia" : MessageLookupByLibrary.simpleMessage("Family"),
     "tamanho" : MessageLookupByLibrary.simpleMessage("Size"),
+    "iaa" : MessageLookupByLibrary.simpleMessage("Meet the IAA"),
+    "nossaHistoria" : MessageLookupByLibrary.simpleMessage("Our story"),
+    "team" : MessageLookupByLibrary.simpleMessage("Meet our team"),
+    "colaboradores" : MessageLookupByLibrary.simpleMessage("Collaborators"),
+    "parceria" : MessageLookupByLibrary.simpleMessage("Partner institutions"),
   };
 }

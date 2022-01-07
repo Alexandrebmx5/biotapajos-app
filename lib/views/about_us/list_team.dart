@@ -42,7 +42,7 @@ class _ListTeamState extends State<ListTeam> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: appBar(title: S.of(context).ucs), body: body());
+    return Scaffold(appBar: appBar(title: S.of(context).team), body: body());
   }
 
   Widget body() {

@@ -27,8 +27,7 @@ class SubMenusAboutUs extends StatelessWidget {
                 onTap: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (_)=>OurStory()));
                 },
-                // TODO: EN E PT
-                title: Text('Nossa História', style: TextStyle(color: Colors.black)),
+                title: Text(S.of(context).nossaHistoria, style: TextStyle(color: Colors.black)),
                 trailing: Icon(Icons.arrow_forward_ios, color: PRIMARY),
               ),
             ),
@@ -39,8 +38,7 @@ class SubMenusAboutUs extends StatelessWidget {
                 onTap: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (_)=>AboutUs()));
                 },
-                // TODO: EN E PT
-                title: Text('Conheça o IAA', style: TextStyle(color: Colors.black)),
+                title: Text(S.of(context).iaa, style: TextStyle(color: Colors.black)),
                 trailing: Icon(Icons.arrow_forward_ios, color: PRIMARY),
               ),
             ),
@@ -51,8 +49,7 @@ class SubMenusAboutUs extends StatelessWidget {
                 onTap: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (_)=>ListTeam()));
                 },
-                // TODO: EN E PT
-                title: Text('Conheça nossa equipe', style: TextStyle(color: Colors.black)),
+                title: Text(S.of(context).team, style: TextStyle(color: Colors.black)),
                 trailing: Icon(Icons.arrow_forward_ios, color: PRIMARY),
               ),
             ),
@@ -63,8 +60,7 @@ class SubMenusAboutUs extends StatelessWidget {
                 onTap: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (_)=>ListCollaborators()));
                 },
-                // TODO: EN E PT
-                title: Text('Colaboradores', style: TextStyle(color: Colors.black)),
+                title: Text(S.of(context).colaboradoes, style: TextStyle(color: Colors.black)),
                 trailing: Icon(Icons.arrow_forward_ios, color: PRIMARY),
               ),
             ),
@@ -75,8 +71,7 @@ class SubMenusAboutUs extends StatelessWidget {
                 onTap: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (_)=>ListInstitutions()));
                 },
-                // TODO: EN E PT
-                title: Text('Instituições parceiras', style: TextStyle(color: Colors.black)),
+                title: Text(S.of(context).parceria, style: TextStyle(color: Colors.black)),
                 trailing: Icon(Icons.arrow_forward_ios, color: PRIMARY),
               ),
             )
