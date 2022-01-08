@@ -92,7 +92,7 @@ Drawer drawer({@required context}) {
                       S.of(context).informe,
                     ),
                     onTap: () {
-                      Navigator.pushReplacementNamed(context, '/actualities');
+                      Navigator.pushReplacementNamed(context, '/actualities_menus');
                     },
                   ),
                   ListTile(

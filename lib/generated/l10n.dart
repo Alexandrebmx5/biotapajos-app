@@ -215,6 +215,24 @@ class S {
     );
   }
 
+  String get informeText {
+    return Intl.message(
+      'Reports',
+      name: 'informeText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get actualities {
+    return Intl.message(
+      'Actualities',
+      name: 'atualidades',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Species Catalogs`
   String get catalago {
     return Intl.message(

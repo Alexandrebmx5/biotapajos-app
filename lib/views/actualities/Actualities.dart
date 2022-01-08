@@ -1,5 +1,4 @@
 import 'package:biotapajos_app/components/AppBar.dart';
-import 'package:biotapajos_app/components/DrawerNavigation.dart';
 import 'package:biotapajos_app/components/Empty.dart';
 import 'package:biotapajos_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +13,6 @@ class _ActualitiesState extends State<Actualities> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(title: S.of(context).informe),
-      drawer: drawer(context: context),
       body: body(),
     );
   }
