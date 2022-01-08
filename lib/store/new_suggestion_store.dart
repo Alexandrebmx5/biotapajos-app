@@ -38,6 +38,9 @@ abstract class _NewSuggestionStore with Store {
   @action
   void setFileUrl(File value) => fileUrl = value;
 
+  @computed
+  bool get fileUrlValid => fileUrl != null;
+
   @observable
   String comment;
 
@@ -68,11 +71,17 @@ abstract class _NewSuggestionStore with Store {
   @action
   void setLat(String value) => lat = value;
 
+  @computed
+  bool get latValid => lat != null;
+
   @observable
   String long;
 
   @action
   void setLong(String value) => long = value;
+
+  @computed
+  bool get longValid => long != null;
 
   @observable
   String location;
@@ -94,7 +103,7 @@ abstract class _NewSuggestionStore with Store {
 
 
   @computed
-  bool get formValid => true;
+  bool get formValid => fileUrlValid && latValid && longValid;
 
   @computed
   Function get sendPressed => formValid ? _send : null;

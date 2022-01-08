@@ -113,7 +113,7 @@ class _SuggestionsScreenState extends State<SuggestionsScreen> {
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 16, top: 16),
-          child: Text('Adicione uma imagem e uma coordenada:', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+          child: Text('Adicione uma imagem e uma coordenada: *', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
         ),
         Padding(
           padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
@@ -418,8 +418,12 @@ class _SuggestionsScreenState extends State<SuggestionsScreen> {
             ),
           ),
         ),
+        Padding(
+          padding: const EdgeInsets.only(left: 16, top: 16, bottom: 20),
+          child: Text('Obs.: Foto e coordenadas são obrigatórios', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),),
+        ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),

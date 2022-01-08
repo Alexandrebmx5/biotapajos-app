@@ -27,7 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "atualizado" : MessageLookupByLibrary.simpleMessage("Atualizado com sucesso"),
     "bemVindo" : MessageLookupByLibrary.simpleMessage("Bem Vindo"),
     "carregar" : MessageLookupByLibrary.simpleMessage("Carregando"),
-    "catalago" : MessageLookupByLibrary.simpleMessage("Catálagos de Espécies"),
+    "catalago" : MessageLookupByLibrary.simpleMessage("Catálago de Espécies"),
     "comoConhecer" : MessageLookupByLibrary.simpleMessage("Distribuição"),
     "coordenadas" : MessageLookupByLibrary.simpleMessage("Coordenadas"),
     "cor" : MessageLookupByLibrary.simpleMessage("Cor"),

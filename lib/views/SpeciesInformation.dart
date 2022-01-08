@@ -1,6 +1,5 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:biotapajos_app/components/AppBar.dart';
-import 'package:biotapajos_app/components/DrawerNavigation.dart';
 import 'package:biotapajos_app/components/Texts.dart';
 import 'package:biotapajos_app/generated/l10n.dart';
 import 'package:biotapajos_app/models/SpecieDetail.dart';
@@ -89,7 +88,6 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
     specieDetail = s;
     return Scaffold(
       appBar: appBar(title: specieDetail.specie),
-      drawer: drawer(context: context),
       body: body(),
     );
   }

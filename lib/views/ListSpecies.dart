@@ -1,6 +1,5 @@
 import 'package:biotapajos_app/components/AppBar.dart';
 import 'package:biotapajos_app/components/Buttons.dart';
-import 'package:biotapajos_app/components/DrawerNavigation.dart';
 import 'package:biotapajos_app/components/EasyLoading.dart';
 import 'package:biotapajos_app/components/Inputs.dart';
 import 'package:biotapajos_app/generated/l10n.dart';
@@ -95,7 +94,6 @@ class _ListSpeciesState extends State<ListSpecies> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: appBar(title: widget.specie.name),
-      drawer: drawer(context: context),
       body: body(id: widget.specie.id),
     );
   }

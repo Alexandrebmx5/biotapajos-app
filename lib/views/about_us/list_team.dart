@@ -88,11 +88,10 @@ class _ListTeamState extends State<ListTeam> {
                       padding: const EdgeInsets.all(16.0),
                       child: Column(
                         children: [
-                          if(teams[index].img.isEmpty)
+                          if(teams[index].img.isNotEmpty)
                             Image.network(
                               teams[index].img.first,
-                              width: 50,
-                              height: 50,
+                              height: 100,
                             ),
                           Padding(
                             padding: const EdgeInsets.only(top: 10),
