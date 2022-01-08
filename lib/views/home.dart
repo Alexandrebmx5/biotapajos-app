@@ -13,18 +13,114 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        iconTheme: IconThemeData(color: bgCOLOR),
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('images/fundo.png'),
+          fit: BoxFit.cover,
+        )
       ),
-      drawer: drawer(context: context),
-      body: body(),
+      child: Scaffold(
+        backgroundColor: Colors.white.withOpacity(0.85),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          iconTheme: IconThemeData(color: bgCOLOR),
+        ),
+        drawer: drawer(context: context),
+        body: body(),
+      ),
     );
   }
 
   Widget body() {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 5, left: 16, right: 16, bottom: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Image.asset('images/logo_no_bg.png', height: 120,),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Text(
+                'Bem vindo ao BioTapajós',
+                style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Guia Interativo de Biodiversidade do baixo tapajos.',
+                style: TextStyle(fontSize: 18, color: Colors.black),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 30, right: 100),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    'Cerca de 390 espécies de anuros habitam as florestas Amazônicas.',
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                    textAlign: TextAlign.justify,
+                  ),
+                  Text(
+                    'Saibam mais-sbore a biodiversidade da região acessando nosso catalago de espécies.',
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                    textAlign: TextAlign.justify,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50, right: 50, top: 5),
+                    child: ElevatedButton(
+                        onPressed: (){
+                          Navigator.of(context).pushNamed('/species');
+                        },
+                        style: ElevatedButton.styleFrom(
+                          primary: PRIMARY,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
+                        ),
+                        child: Text('Clique aqui!')
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 50, left: 100),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    'Conheça nossa equipe!',
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                    textAlign: TextAlign.center,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50, right: 50, top: 5),
+                    child: ElevatedButton(
+                        onPressed: (){
+                          Navigator.of(context).pushNamed('/about');
+                        },
+                        style: ElevatedButton.styleFrom(
+                            primary: PRIMARY,
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
+                        ),
+                        child: Text('Clique aqui!')
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget bodyConstruction() {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
