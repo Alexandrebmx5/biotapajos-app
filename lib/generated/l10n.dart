@@ -750,6 +750,61 @@ class S {
       args: [],
     );
   }
+
+  /// `Home`
+  String get BemVindoaoBioTapajos {
+    return Intl.message(
+      'Welcome to BioTapajós',
+      name: 'bemvindoBiotapajos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get Guia {
+    return Intl.message(
+      'Interactive Guide',
+      name: 'guiaInterativo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get homeText1 {
+    return Intl.message(
+      'Home Text One',
+      name: 'homeText1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get homeText2 {
+    return Intl.message(
+      'Home Text Two',
+      name: 'homeText2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get homeText3 {
+    return Intl.message(
+      'Home Text Three',
+      name: 'homeText3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get homeButton {
+    return Intl.message(
+      'Click here!',
+      name: 'homeButton',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

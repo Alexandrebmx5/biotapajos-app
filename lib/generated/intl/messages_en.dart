@@ -94,5 +94,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "dieta" : MessageLookupByLibrary.simpleMessage("Diet"),
     "informeText" : MessageLookupByLibrary.simpleMessage("Reposts"),
     "atualidades" : MessageLookupByLibrary.simpleMessage("Actualities"),
+    "bemvindoBiotapajos" : MessageLookupByLibrary.simpleMessage("Welcome to BioTapajós"),
+    "guiaInterativo" : MessageLookupByLibrary.simpleMessage("Interactive Biodiversity Guide of the lower tapajos."),
+    "homeText1" : MessageLookupByLibrary.simpleMessage("About 390 species of anurans inhabit the Amazon forests."),
+    "homeText2" : MessageLookupByLibrary.simpleMessage("Learn more about the region's biodiversity by accessing our species catalogue."),
+    "homeText3" : MessageLookupByLibrary.simpleMessage("Meet our team!"),
+    "homeButton" : MessageLookupByLibrary.simpleMessage("Click here!"),
   };
 }

@@ -94,5 +94,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "dieta" : MessageLookupByLibrary.simpleMessage("Dieta"),
     "informeText" : MessageLookupByLibrary.simpleMessage("Informes"),
     "atualidades" : MessageLookupByLibrary.simpleMessage("Atualidades"),
+    "bemvindoBiotapajos" : MessageLookupByLibrary.simpleMessage("Bem vindo ao BioTapajós"),
+    "guiaInterativo" : MessageLookupByLibrary.simpleMessage("Guia Interativo de Biodiversidade do baixo tapajos."),
+    "homeText1" : MessageLookupByLibrary.simpleMessage("Cerca de 390 espécies de anuros habitam as florestas Amazônicas."),
+    "homeText2" : MessageLookupByLibrary.simpleMessage("Saibam mais-sbore a biodiversidade da região acessando nosso catalago de espécies."),
+    "homeText3" : MessageLookupByLibrary.simpleMessage("Conheça nossa equipe!"),
+    "homeButton" : MessageLookupByLibrary.simpleMessage("Clique aqui!"),
   };
 }

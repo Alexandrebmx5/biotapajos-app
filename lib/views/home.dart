@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
             Padding(
               padding: const EdgeInsets.only(top: 10),
               child: Text(
-                'Bem vindo ao BioTapajós',
+                S.of(context).BemVindoaoBioTapajos,
                 style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                'Guia Interativo de Biodiversidade do baixo tapajos.',
+                S.of(context).Guia,
                 style: TextStyle(fontSize: 18, color: Colors.black),
                 textAlign: TextAlign.center,
               ),
@@ -63,12 +63,12 @@ class _HomeState extends State<Home> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    'Cerca de 390 espécies de anuros habitam as florestas Amazônicas.',
+                    S.of(context).homeText1,
                     style: TextStyle(fontSize: 16, color: Colors.black),
                     textAlign: TextAlign.justify,
                   ),
                   Text(
-                    'Saibam mais-sbore a biodiversidade da região acessando nosso catalago de espécies.',
+                    S.of(context).homeText2,
                     style: TextStyle(fontSize: 16, color: Colors.black),
                     textAlign: TextAlign.justify,
                   ),
@@ -82,7 +82,7 @@ class _HomeState extends State<Home> {
                           primary: PRIMARY,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
                         ),
-                        child: Text('Clique aqui!')
+                        child: Text(S.of(context).homeButton)
                     ),
                   )
                 ],
@@ -94,7 +94,7 @@ class _HomeState extends State<Home> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    'Conheça nossa equipe!',
+                    S.of(context).homeText3,
                     style: TextStyle(fontSize: 16, color: Colors.black),
                     textAlign: TextAlign.center,
                   ),
@@ -108,7 +108,7 @@ class _HomeState extends State<Home> {
                             primary: PRIMARY,
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
                         ),
-                        child: Text('Clique aqui!')
+                        child: Text(S.of(context).homeButton)
                     ),
                   )
                 ],
