@@ -12,7 +12,7 @@ class Suggestions {
   File fileUrl;
   String lat;
   String long;
-  String approved;
+  bool approved;
   String location;
   String nameSpecie;
   String date;
@@ -21,6 +21,7 @@ class Suggestions {
   String environment;
   String comment;
   Timestamp created;
+  String fileUrlString;
 
   Suggestions(
       {this.id,
@@ -38,6 +39,7 @@ class Suggestions {
       this.sightedPlace,
       this.environment,
       this.comment,
+      this.fileUrlString,
       this.created});
 
   Reference get storageRef =>
