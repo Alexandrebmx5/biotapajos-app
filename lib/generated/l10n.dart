@@ -781,7 +781,7 @@ class S {
 
   String get homeText2 {
     return Intl.message(
-      'Home Text Two',
+      'Suggestion',
       name: 'homeText2',
       desc: '',
       args: [],

@@ -58,22 +58,17 @@ class _HomeState extends State<Home> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 30, right: 100),
+              padding: const EdgeInsets.only(top: 30, right: 30, left: 30),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     S.of(context).homeText1,
                     style: TextStyle(fontSize: 16, color: Colors.black),
-                    textAlign: TextAlign.justify,
-                  ),
-                  Text(
-                    S.of(context).homeText2,
-                    style: TextStyle(fontSize: 16, color: Colors.black),
-                    textAlign: TextAlign.justify,
+                    textAlign: TextAlign.center,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 50, right: 50, top: 5),
+                    padding: const EdgeInsets.only(top: 5),
                     child: ElevatedButton(
                         onPressed: (){
                           Navigator.of(context).pushNamed('/species');
@@ -89,9 +84,35 @@ class _HomeState extends State<Home> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 50, left: 100),
+              padding: const EdgeInsets.only(top: 20),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    S.of(context).homeText2,
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                    textAlign: TextAlign.center,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50, right: 50, top: 5),
+                    child: ElevatedButton(
+                        onPressed: (){
+                          Navigator.of(context).pushNamed('/suges');
+                        },
+                        style: ElevatedButton.styleFrom(
+                            primary: PRIMARY,
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
+                        ),
+                        child: Text(S.of(context).homeButton)
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     S.of(context).homeText3,

@@ -106,7 +106,9 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: SizedBox(
                       height: constraints.maxHeight * 0.40,
                       width: constraints.maxWidth,
-                      child: Carousel(images: _createListImages())),
+                      child: specieDetail.img.isNotEmpty ?
+                      Carousel(images: _createListImages()) :
+                      Image.asset('images/logo_no_bg.png')),
                 ),
                 Container(
                   width: constraints.maxWidth,
@@ -169,7 +171,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                           children: [
                             Text('${S.of(context).nameCommon} ', style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.bold)),
-                            Text(specieDetail.name.isEmpty ? '...' : specieDetail.name)
+                            Expanded(child: Text(specieDetail.name.isEmpty ? '...' : specieDetail.name))
                           ],
                         )),
                   ),
@@ -333,7 +335,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                     child: Container(
                         width: constraints.maxWidth,
                         child: textIcon(
-                            child: Image.asset('images/dieta.png', width: 30, height: 25,),
+                            child: Image.asset('images/dieta.jpeg', width: 30, height: 25,),
                             text: S.of(context).dieta ?? '',
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.bold))),
@@ -354,7 +356,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                     child: Container(
                         width: constraints.maxWidth,
                         child: textIcon(
-                            child: Image.asset('images/veneno.png', width: 30, height: 25,),
+                            child: Image.asset('images/caveira.jpeg', width: 30, height: 25,),
                             text: S.of(context).venom ?? '',
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.bold))),

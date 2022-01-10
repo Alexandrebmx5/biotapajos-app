@@ -261,12 +261,16 @@ class _ListSpeciesState extends State<ListSpecies> {
                                           _nextScreen(
                                               specie: speciesDetails[index]);
                                         },
-                                        leading: Image.network(
+                                        leading: speciesDetails[index].img.isNotEmpty ? Image.network(
                                           speciesDetails[index].img[0],
                                           width: 70,
                                           height: 70,
                                           fit: BoxFit.fill,
-                                        ),
+                                        ) : Image.asset(
+                                          'images/logo_no_bg.png',
+                                          width: 70,
+                                          height: 70,
+                                          fit: BoxFit.fill),
                                         title: Text(
                                           speciesDetails[index].specie,
                                         ),
@@ -315,12 +319,16 @@ class _ListSpeciesState extends State<ListSpecies> {
                                             _nextScreen(
                                                 specie: speciesDetails[index]);
                                           },
-                                          leading: Image.network(
+                                          leading: speciesDetails[index].img.isNotEmpty ? Image.network(
                                             speciesDetails[index].img[0],
                                             width: 70,
                                             height: 70,
                                             fit: BoxFit.fill,
-                                          ),
+                                          ) : Image.asset(
+                                              'images/logo_no_bg.png',
+                                              width: 70,
+                                              height: 70,
+                                              fit: BoxFit.fill),
                                           title: Text(
                                               speciesDetails[index].specie),
                                           subtitle: Padding(
@@ -350,12 +358,16 @@ class _ListSpeciesState extends State<ListSpecies> {
                                           _nextScreen(
                                               specie: speciesDetails[index]);
                                         },
-                                        leading: Image.network(
+                                        leading: speciesDetails[index].img.isNotEmpty ? Image.network(
                                           speciesDetails[index].img[0],
                                           width: 70,
                                           height: 70,
                                           fit: BoxFit.fill,
-                                        ),
+                                        ) : Image.asset(
+                                            'images/logo_no_bg.png',
+                                            width: 70,
+                                            height: 70,
+                                            fit: BoxFit.fill),
                                         title: Text(speciesDetails[index].specie),
                                         subtitle: Padding(
                                           padding: const EdgeInsets.only(
