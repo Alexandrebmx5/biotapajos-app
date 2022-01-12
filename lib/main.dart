@@ -109,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  _checkLoged() {
+  _checkLogged() {
     if (Auth.isLoged()) {
       Future(() {
         Navigator.pushNamed(context, '/home');
@@ -122,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // TODO: implement initState
     super.initState();
     _setLanguage();
-    _checkLoged();
+    _checkLogged();
     _getPreferences();
   }
 

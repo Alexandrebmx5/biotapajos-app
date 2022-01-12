@@ -2,7 +2,7 @@ import 'package:biotapajos_app/components/AppBar.dart';
 import 'package:biotapajos_app/components/DrawerNavigation.dart';
 import 'package:biotapajos_app/generated/l10n.dart';
 import 'package:biotapajos_app/styles/Color.dart';
-import 'package:biotapajos_app/views/ecological_trails/EcologicalTrails.dart';
+import 'package:biotapajos_app/views/ecological_trails/list_trails.dart';
 import 'package:biotapajos_app/views/ecological_trails/list_ucs.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +33,7 @@ class SubMenusEcologicalTrails extends StatelessWidget {
               color: Colors.white,
               child: ListTile(
                 onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (_)=>EcologicalTrails()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_)=>ListTrails()));
                 },
                 title: Text(S.of(context).trilhasEcologicas),
                 trailing: Icon(Icons.arrow_forward_ios, color: PRIMARY),

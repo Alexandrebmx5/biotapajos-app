@@ -1,17 +1,17 @@
 import 'package:biotapajos_app/components/AppBar.dart';
-import 'package:biotapajos_app/models/ucs.dart';
+import 'package:biotapajos_app/models/trails.dart';
 import 'package:flutter/material.dart';
 
-class UcsScreen extends StatelessWidget {
+class TrailsScreen extends StatelessWidget {
 
-  UcsScreen(this.ucs);
+  TrailsScreen(this.trails);
 
-  final Ucs ucs;
+  final Trails trails;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(title: ucs.title),
+      appBar: appBar(title: trails.title),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16),
@@ -20,7 +20,7 @@ class UcsScreen extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 30, right: 30),
-                child: Text(ucs.title,
+                child: Text(trails.title,
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
@@ -28,23 +28,23 @@ class UcsScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Image.network(
-                    ucs.img[0],
+                  trails.img[0],
                   fit: BoxFit.cover,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
-                  ucs.paragraphOne,
+                  trails.paragraphOne,
                   textAlign: TextAlign.start,
                   style: TextStyle(fontSize: 14, letterSpacing: 1.0),
                 ),
               ),
-              if(ucs.img.length > 1)...[
+              if(trails.img.length > 1)...[
                 Padding(
                   padding: const EdgeInsets.all(10),
                   child: Image.network(
-                    ucs.img[1],
+                    trails.img[1],
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -52,16 +52,16 @@ class UcsScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
-                  ucs.paragraphTwo,
+                  trails.paragraphTwo,
                   textAlign: TextAlign.start,
                   style: TextStyle(fontSize: 14, letterSpacing: 1.0),
                 ),
               ),
-              if(ucs.img.length > 2)...[
+              if(trails.img.length > 2)...[
                 Padding(
                   padding: const EdgeInsets.all(10),
                   child: Image.network(
-                    ucs.img[2],
+                    trails.img[2],
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -69,7 +69,7 @@ class UcsScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
-                  ucs.paragraphThree,
+                  trails.paragraphThree,
                   textAlign: TextAlign.start,
                   style: TextStyle(fontSize: 14, letterSpacing: 1.0),
                 ),
@@ -77,7 +77,7 @@ class UcsScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
-                  ucs.paragraphFour,
+                  trails.paragraphFour,
                   textAlign: TextAlign.start,
                   style: TextStyle(fontSize: 14, letterSpacing: 1.0),
                 ),

@@ -69,7 +69,7 @@ class _OurStoryState extends State<OurStory> {
                           top: 20.0, left: 16, right: 16, bottom: 16),
                       child: Text(
                         _text,
-                        textAlign: TextAlign.justify,
+                        textAlign: TextAlign.start,
                         style: TextStyle(fontSize: 14, letterSpacing: 1.0),
                       ),
                     )

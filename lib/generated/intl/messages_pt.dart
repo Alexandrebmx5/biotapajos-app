@@ -95,7 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "informeText" : MessageLookupByLibrary.simpleMessage("Informes"),
     "atualidades" : MessageLookupByLibrary.simpleMessage("Atualidades"),
     "bemvindoBiotapajos" : MessageLookupByLibrary.simpleMessage("Bem vindo ao BioTapajós"),
-    "guiaInterativo" : MessageLookupByLibrary.simpleMessage("Guia Interativo de Biodiversidade do baixo tapajos."),
+    "guiaInterativo" : MessageLookupByLibrary.simpleMessage("Guia Interativo de Biodiversidade do baixo Tapajós."),
     "homeText1" : MessageLookupByLibrary.simpleMessage("Milhares de espécies habitam as florestas Amazônicas. Saiba mais sobre a biodiversidade da região acessando nosso catálogo de espécies"),
     "homeText2" : MessageLookupByLibrary.simpleMessage("Deixe seu registro!"),
     "homeText3" : MessageLookupByLibrary.simpleMessage("Conheça nossa equipe!"),

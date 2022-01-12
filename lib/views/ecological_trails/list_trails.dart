@@ -1,29 +1,32 @@
 import 'package:biotapajos_app/components/AppBar.dart';
 import 'package:biotapajos_app/components/EasyLoading.dart';
 import 'package:biotapajos_app/generated/l10n.dart';
-import 'package:biotapajos_app/models/ucs.dart';
-import 'package:biotapajos_app/views/ecological_trails/ucs_screen.dart';
+import 'package:biotapajos_app/models/trails.dart';
+import 'package:biotapajos_app/views/ecological_trails/trails_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/intl.dart';
 
-class ListUcs extends StatefulWidget {
+
+class ListTrails extends StatefulWidget {
+
   @override
-  _ListUcsState createState() => _ListUcsState();
+  _ListTrailsState createState() => _ListTrailsState();
 }
 
-class _ListUcsState extends State<ListUcs> {
+class _ListTrailsState extends State<ListTrails> {
+
   FirebaseFirestore db = FirebaseFirestore.instance;
   String currentLang;
   Stream _stream = null;
   _initStream() {
-    return db.collection('ucs').snapshots();
+    return db.collection('trails').snapshots();
   }
 
   _setLanguage() async {
     SharedPreferences _sharedPreferences =
-        await SharedPreferences.getInstance();
+    await SharedPreferences.getInstance();
     String lang = _sharedPreferences.get('lang');
     setState(() {
       S.load(Locale.fromSubtags(languageCode: lang));
@@ -43,7 +46,9 @@ class _ListUcsState extends State<ListUcs> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: appBar(title: S.of(context).ucs), body: body());
+    return Scaffold(
+        appBar: appBar(title: S.of(context).trilhasEcologicas),
+        body: body());
   }
 
   Widget body() {
@@ -58,13 +63,13 @@ class _ListUcsState extends State<ListUcs> {
             } else {
               //Create ListView
               List<QueryDocumentSnapshot> documents =
-                  snapshot.data.docs.toList();
+              snapshot.data.docs.toList();
 
-              List<Ucs> ucs = [];
+              List<Trails> trails = [];
 
               documents.forEach((element) {
                 if (currentLang == 'pt') {
-                  Ucs ucss = Ucs(
+                  Trails trail = Trails(
                       title: element['title'],
                       img: element['img'],
                       paragraphOne: element['paragraph_one'],
@@ -72,9 +77,9 @@ class _ListUcsState extends State<ListUcs> {
                       paragraphThree: element['paragraph_three'],
                       paragraphFour: element['paragraph_four'],
                       id: element.id);
-                  ucs.add(ucss);
+                  trails.add(trail);
                 } else {
-                  Ucs ucss = Ucs(
+                  Trails trail = Trails(
                       title: element['title_en'],
                       img: element['img'],
                       paragraphOne: element['paragraph_one_en'],
@@ -82,21 +87,21 @@ class _ListUcsState extends State<ListUcs> {
                       paragraphThree: element['paragraph_three_en'],
                       paragraphFour: element['paragraph_four_en'],
                       id: element.id);
-                  ucs.add(ucss);
+                  trails.add(trail);
                 }
               });
 
-              if (ucs.isEmpty) {
+              if(trails.isEmpty){
                 dismiss();
                 return Center(
                   child: Text('Nenhum dado registrado!'),
                 );
               } else {
                 return ListView.builder(
-                  itemCount: ucs.length,
+                  itemCount: trails.length,
                   itemBuilder: (context, index) {
                     dismiss();
-                    if (ucs.isNotEmpty) {
+                    if (trails.isNotEmpty) {
                       return Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Column(
@@ -106,19 +111,19 @@ class _ListUcsState extends State<ListUcs> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => UcsScreen(
-                                            ucs[index],
-                                          )),
+                                      builder: (context) => TrailsScreen(
+                                        trails[index],
+                                      )),
                                 );
                               },
                               leading: Image.network(
-                                ucs[index].img.first,
+                                trails[index].img.first,
                                 width: 50,
                                 height: 50,
                               ),
                               title: Padding(
                                 padding: const EdgeInsets.only(left: 64.0),
-                                child: Text(ucs[index].title),
+                                child: Text(trails[index].title),
                               ),
                             ),
                             Padding(
@@ -137,6 +142,7 @@ class _ListUcsState extends State<ListUcs> {
                   },
                 );
               }
+
             }
           },
         ));
