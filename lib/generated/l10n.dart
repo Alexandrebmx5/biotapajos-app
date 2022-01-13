@@ -698,7 +698,7 @@ class S {
   String get dieta {
     return Intl.message(
       'Diet',
-      name: 'diata',
+      name: 'dieta',
       desc: '',
       args: [],
     );
