@@ -1,5 +1,3 @@
-import 'package:biotapajos_app/views/about_us/AboutUs.dart';
-import 'package:biotapajos_app/views/actualities/Actualities.dart';
 import 'package:biotapajos_app/views/GetCoordinate.dart';
 import 'package:biotapajos_app/views/ListSpecies.dart';
 import 'package:biotapajos_app/views/Login.dart';
@@ -11,6 +9,8 @@ import 'package:biotapajos_app/views/Species.dart';
 import 'package:biotapajos_app/views/SpeciesInformation.dart';
 import 'package:biotapajos_app/views/Suggestions.dart';
 import 'package:biotapajos_app/views/about_us/submenus_about_us.dart';
+import 'package:biotapajos_app/views/actualities/list_actualities.dart';
+import 'package:biotapajos_app/views/actualities/list_report.dart';
 import 'package:biotapajos_app/views/actualities/submenus_actualities.dart';
 import 'package:biotapajos_app/views/ecological_trails/submenus_ecological_trails.dart';
 import 'package:biotapajos_app/views/home.dart';
@@ -31,7 +31,8 @@ routes() {
     '/coordinates': (context) => GetCoordinate(),
     '/profile': (context) => Profile(),
     '/trails': (context) => SubMenusEcologicalTrails(),
-    '/actualities': (context) => Actualities(),
+    '/actualities': (context) => ListActualities(),
+    '/report': (context) => ListReport(),
     '/actualities_menus': (context) => SubMenusActualities(),
     '/about': (context) => SubMenusAboutUs(),
     '/': (context) => InitialScreen(),

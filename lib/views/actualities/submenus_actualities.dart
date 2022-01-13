@@ -20,7 +20,7 @@ class SubMenusActualities extends StatelessWidget {
               color: Colors.white,
               child: ListTile(
                 onTap: (){
-                  Navigator.of(context).pushNamed('/actualities');
+                  Navigator.of(context).pushNamed('/report');
                 },
                 title: Text(S.of(context).informeText),
                 trailing: Icon(Icons.arrow_forward_ios, color: PRIMARY),
