@@ -40,20 +40,12 @@ class _HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.asset('images/logo_no_bg.png', height: 120,),
+            Image.asset('images/logo_no_bg.png', height: 150, width: 150),
             Padding(
               padding: const EdgeInsets.only(top: 10),
               child: Text(
                 S.of(context).BemVindoaoBioTapajos,
                 style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                S.of(context).Guia,
-                style: TextStyle(fontSize: 18, color: Colors.black),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -123,7 +115,7 @@ class _HomeState extends State<Home> {
                     padding: const EdgeInsets.only(left: 50, right: 50, top: 5),
                     child: ElevatedButton(
                         onPressed: (){
-                          Navigator.of(context).pushNamed('/about');
+                          Navigator.of(context).pushNamed('/actualities');
                         },
                         style: ElevatedButton.styleFrom(
                             primary: PRIMARY,

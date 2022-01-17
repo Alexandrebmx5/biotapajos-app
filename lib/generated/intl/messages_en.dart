@@ -94,11 +94,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "dieta" : MessageLookupByLibrary.simpleMessage("Diet"),
     "informeText" : MessageLookupByLibrary.simpleMessage("Reposts"),
     "atualidades" : MessageLookupByLibrary.simpleMessage("Actualities"),
-    "bemvindoBiotapajos" : MessageLookupByLibrary.simpleMessage("Welcome to BioTapajós"),
-    "guiaInterativo" : MessageLookupByLibrary.simpleMessage("Interactive Biodiversity Guide of the lower tapajos."),
-    "homeText1" : MessageLookupByLibrary.simpleMessage("Thousands of species inhabit the Amazon forests. Learn more about the region's biodiversity by accessing our species catalog"),
+    "bemvindoBiotapajos" : MessageLookupByLibrary.simpleMessage("Welcome to the Lower Tapajós Biodiversity Interactive Guide"),
+    "homeText1" : MessageLookupByLibrary.simpleMessage("The ecosystems of western Pará are very rich in biodiversity. Learn more about plants and animals by accessing the species catalog."),
     "homeText2" : MessageLookupByLibrary.simpleMessage("leave your registration!"),
-    "homeText3" : MessageLookupByLibrary.simpleMessage("Meet our team!"),
+    "homeText3" : MessageLookupByLibrary.simpleMessage("News!"),
     "homeButton" : MessageLookupByLibrary.simpleMessage("Click here!"),
   };
 }

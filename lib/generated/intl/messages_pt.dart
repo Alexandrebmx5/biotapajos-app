@@ -94,11 +94,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "dieta" : MessageLookupByLibrary.simpleMessage("Dieta"),
     "informeText" : MessageLookupByLibrary.simpleMessage("Informes"),
     "atualidades" : MessageLookupByLibrary.simpleMessage("Atualidades"),
-    "bemvindoBiotapajos" : MessageLookupByLibrary.simpleMessage("Bem vindo ao BioTapajós"),
-    "guiaInterativo" : MessageLookupByLibrary.simpleMessage("Guia Interativo de Biodiversidade do baixo Tapajós."),
-    "homeText1" : MessageLookupByLibrary.simpleMessage("Milhares de espécies habitam as florestas Amazônicas. Saiba mais sobre a biodiversidade da região acessando nosso catálogo de espécies"),
+    "bemvindoBiotapajos" : MessageLookupByLibrary.simpleMessage("Bem Vindo ao Guia Interativo de Biodiversidade do baixo Tapajós"),
+    "homeText1" : MessageLookupByLibrary.simpleMessage("Os ecossistemas do oeste do Pará são muito ricos em biodiversidade. Saiba mais sobre plantas e animais acessando o catálogo de espécies."),
     "homeText2" : MessageLookupByLibrary.simpleMessage("Deixe seu registro!"),
-    "homeText3" : MessageLookupByLibrary.simpleMessage("Conheça nossa equipe!"),
+    "homeText3" : MessageLookupByLibrary.simpleMessage("Atualidades!"),
     "homeButton" : MessageLookupByLibrary.simpleMessage("Clique aqui!"),
   };
 }
