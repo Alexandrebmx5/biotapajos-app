@@ -7,6 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'generated/l10n.dart';
@@ -17,7 +18,10 @@ void main() async {
   await Firebase.initializeApp();
   configLoading();
   runApp(MyApp());
+  await _geoLocator.getCurrentPosition();
 }
+
+final Geolocator _geoLocator = Geolocator();
 
 void configLoading() {
   EasyLoading.instance
