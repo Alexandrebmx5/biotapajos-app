@@ -56,7 +56,7 @@ class Suggestions {
       'email_user': suggestions.email,
       'environment': suggestions.environment,
       'lat': suggestions.lat,
-      'location': suggestions.lat,
+      'location': suggestions.location,
       'long': suggestions.long,
       'name_specie': suggestions.nameSpecie,
       'name_user': suggestions.nome,

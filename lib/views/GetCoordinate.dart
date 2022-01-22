@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:biotapajos_app/components/AppBar.dart';
 import 'package:biotapajos_app/generated/l10n.dart';
+import 'package:biotapajos_app/styles/Color.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:toast/toast.dart';
@@ -38,17 +39,21 @@ class _GetCoordinateState extends State<GetCoordinate> {
       appBar: appBar(title: S.of(context).coordenadas),
       resizeToAvoidBottomInset: false,
       body: body(),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.check),
-        onPressed: () {
-          if (_selectedPoint != null) {
-            Navigator.pushReplacementNamed(context, '/suges',
-                arguments: _selectedPoint);
-          } else {
-            Toast.show(S.of(context).erroCoordenada, context,
-                duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
-          }
-        },
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(right: 40),
+        child: FloatingActionButton(
+          backgroundColor: PRIMARY,
+          child: Icon(Icons.check),
+          onPressed: () {
+            if (_selectedPoint != null) {
+              Navigator.pushReplacementNamed(context, '/suges',
+                  arguments: _selectedPoint);
+            } else {
+              Toast.show(S.of(context).erroCoordenada, context,
+                  duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+            }
+          },
+        ),
       ),
     );
   }
@@ -56,6 +61,8 @@ class _GetCoordinateState extends State<GetCoordinate> {
   Widget body() {
     return Container(
         child: GoogleMap(
+      myLocationEnabled: true,
+      myLocationButtonEnabled: true,
       mapType: MapType.normal,
       markers: _marker,
       initialCameraPosition: _initialCamera,

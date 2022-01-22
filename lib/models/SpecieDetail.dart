@@ -18,6 +18,7 @@ class SpecieDetail {
   String _whereLive;
   String _venom;
   String _diet;
+  String _creditImage;
 
   SpecieDetail(
       {String name,
@@ -38,7 +39,8 @@ class SpecieDetail {
       String specieSimilar,
       String whereLive,
       String venom,
-      String diet,}) {
+      String diet,
+      String creditImage}) {
     this._name = name;
     this._id = id;
     this._specie = specie;
@@ -58,6 +60,7 @@ class SpecieDetail {
     this._whereLive = whereLive;
     this._venom = venom;
     this._diet = diet;
+    this._creditImage = creditImage;
   }
 
   String get id => _id;
@@ -171,6 +174,12 @@ class SpecieDetail {
 
   set diet(String diet) {
     _diet = diet;
+  }
+
+  String get creditImage => _creditImage;
+
+  set creditImage(String creditImage) {
+    _creditImage = creditImage;
   }
 
 //end

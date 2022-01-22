@@ -180,7 +180,8 @@ class _ListSpeciesState extends State<ListSpecies> {
                             specieSimilar: element.data()['specie_similar'],
                             whereLive: element.data()['where_live'],
                             venom: element.data()['venom'],
-                            diet: element.data()['diet']
+                            diet: element.data()['diet'],
+                            creditImage: element.data()['credit_image']
                         );
 
                         speciesDetails.add(specieDetail);
@@ -204,7 +205,8 @@ class _ListSpeciesState extends State<ListSpecies> {
                             specieSimilar: element.data()['specie_similar_en'],
                             whereLive: element.data()['where_live_en'],
                             venom: element.data()['venom_en'],
-                            diet: element.data()['diet_en']
+                            diet: element.data()['diet_en'],
+                            creditImage: element.data()['credit_image_en']
                         );
 
                         speciesDetails.add(specieDetail);

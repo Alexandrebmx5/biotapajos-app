@@ -3,7 +3,6 @@ import 'package:biotapajos_app/components/AppBar.dart';
 import 'package:biotapajos_app/components/DrawerNavigation.dart';
 import 'package:biotapajos_app/components/EasyLoading.dart';
 import 'package:biotapajos_app/components/Inputs.dart';
-import 'package:biotapajos_app/components/MapComponent.dart';
 import 'package:biotapajos_app/config/Auth.dart';
 import 'package:biotapajos_app/generated/l10n.dart';
 import 'package:biotapajos_app/models/suggestions.dart';
@@ -24,6 +23,7 @@ class _MapViewState extends State<MapView> {
   List<Suggestions> _tmpSpecies = [];
   Set<Marker> _markers = {};
   Set<Marker> _tmpMarker = {};
+
   static final CameraPosition _initialCamera = CameraPosition(
     target: LatLng(-9.668553771256917, -50.73260927807307),
     zoom: 3.0,
@@ -94,7 +94,42 @@ class _MapViewState extends State<MapView> {
         Marker marker = Marker(
             markerId: MarkerId(element.id),
             position: latLng,
-            infoWindow: InfoWindow(title: element.nameSpecie));
+            onTap: () {
+
+          showDialog(
+              context: context,
+              builder: (BuildContext context){
+                return AlertDialog(
+                  contentPadding: EdgeInsets.all(10),
+
+                  content: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.network(element.fileUrlString, width: 200, height: 200),
+                      SizedBox(height: 10,),
+                      Text(element.nameSpecie, style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16)),
+                      SizedBox(height: 20,),
+                      Text(S.of(context).catalago),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 5),
+                        child: ElevatedButton(
+                            onPressed: (){
+                              Navigator.of(context).pushNamed('/species');
+                            },
+                            style: ElevatedButton.styleFrom(
+                                primary: PRIMARY,
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
+                            ),
+                            child: Text(S.of(context).homeButton)
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              }
+          );
+        });
         _tmpMarker.add(marker);
       }
     });
@@ -125,7 +160,41 @@ class _MapViewState extends State<MapView> {
       Marker marker = Marker(
           markerId: MarkerId(element.id),
           position: latLng,
-          infoWindow: InfoWindow(title: element.nameSpecie));
+          onTap: () {
+            showDialog(
+                context: context,
+                builder: (BuildContext context){
+                  return AlertDialog(
+                    contentPadding: EdgeInsets.all(10),
+
+                    content: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.network(element.fileUrlString, width: 200, height: 200),
+                        SizedBox(height: 10,),
+                        Text(element.nameSpecie, style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16)),
+                        SizedBox(height: 20,),
+                        Text(S.of(context).catalago),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 5),
+                          child: ElevatedButton(
+                              onPressed: (){
+                                Navigator.of(context).pushNamed('/species');
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  primary: PRIMARY,
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
+                              ),
+                              child: Text(S.of(context).homeButton)
+                          ),
+                        )
+                      ],
+                    ),
+                  );
+                }
+            );
+          });
       _tmpMarker.add(marker);
     }
 
@@ -137,10 +206,13 @@ class _MapViewState extends State<MapView> {
   Widget body() {
     return Stack(
       children: [
-        MapComponent(
-          controller: _controller,
-          initialCamera: _initialCamera,
+        GoogleMap(
           markers: _markers,
+          mapType: MapType.normal,
+          initialCameraPosition: _initialCamera,
+          onMapCreated: (GoogleMapController controller) {
+            _controller.complete(controller);
+          },
         ),
         _searchBar(),
       ],

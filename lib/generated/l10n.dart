@@ -704,6 +704,15 @@ class S {
     );
   }
 
+  String get creditImage {
+    return Intl.message(
+      'Credit Image',
+      name: 'creditImage',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get nameCommon {
     return Intl.message(
       'Name Common',

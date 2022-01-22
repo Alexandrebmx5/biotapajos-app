@@ -369,6 +369,27 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                       child: _textNullSafety(data: specieDetail.venom),
                     ),
                   ),
+                ],
+                if(specieDetail.creditImage != null )...[
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
+                        width: constraints.maxWidth,
+                        child: textIcon(
+                            child: Icon(Icons.article, color: Colors.black),
+                            text: S.of(context).creditImage,
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold))),
+                  ),
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0, bottom: 20),
+                    child: Container(
+                      width: constraints.maxWidth,
+                      child: _textNullSafety(data: specieDetail.creditImage),
+                    ),
+                  ),
                 ]
               ],
             ),

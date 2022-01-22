@@ -99,5 +99,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "homeText2" : MessageLookupByLibrary.simpleMessage("Deixe seu registro!"),
     "homeText3" : MessageLookupByLibrary.simpleMessage("Atualidades!"),
     "homeButton" : MessageLookupByLibrary.simpleMessage("Clique aqui!"),
+    "creditImage": MessageLookupByLibrary.simpleMessage("Créditos Imagem")
   };
 }

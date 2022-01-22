@@ -1,6 +1,5 @@
 import 'package:biotapajos_app/components/Buttons.dart';
 import 'package:biotapajos_app/components/EasyLoading.dart';
-import 'package:biotapajos_app/components/Empty.dart';
 import 'package:biotapajos_app/components/Inputs.dart';
 import 'package:biotapajos_app/config/Auth.dart';
 import 'package:biotapajos_app/generated/l10n.dart';
