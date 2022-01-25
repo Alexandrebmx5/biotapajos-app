@@ -30,7 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "catalago" : MessageLookupByLibrary.simpleMessage("Catálago de Espécies"),
     "comoConhecer" : MessageLookupByLibrary.simpleMessage("Distribuição"),
     "coordenadas" : MessageLookupByLibrary.simpleMessage("Coordenadas"),
-    "cor" : MessageLookupByLibrary.simpleMessage("Cor"),
+    "cor" : MessageLookupByLibrary.simpleMessage("Descrição"),
     "criarUmaConta" : MessageLookupByLibrary.simpleMessage("Criar uma conta"),
     "emConstrucao" : MessageLookupByLibrary.simpleMessage("Ainda em Construção"),
     "email" : MessageLookupByLibrary.simpleMessage("Email"),
@@ -81,7 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "verLocalizacao" : MessageLookupByLibrary.simpleMessage("Ver Localização"),
     "voceSabia" : MessageLookupByLibrary.simpleMessage("Você Sabia?"),
     "ondeVive" : MessageLookupByLibrary.simpleMessage("Onde Vive"),
-    "especieSimilar" : MessageLookupByLibrary.simpleMessage("Espécie Similar"),
+    "especieSimilar" : MessageLookupByLibrary.simpleMessage("Espécies Similares"),
     "nomeComum" : MessageLookupByLibrary.simpleMessage("Nome Comum"),
     "familia" : MessageLookupByLibrary.simpleMessage("Família"),
     "tamanho" : MessageLookupByLibrary.simpleMessage("Tamanho"),
@@ -99,6 +99,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "homeText2" : MessageLookupByLibrary.simpleMessage("Deixe seu registro!"),
     "homeText3" : MessageLookupByLibrary.simpleMessage("Atualidades!"),
     "homeButton" : MessageLookupByLibrary.simpleMessage("Clique aqui!"),
-    "creditImage": MessageLookupByLibrary.simpleMessage("Créditos Imagem")
+    "creditImage": MessageLookupByLibrary.simpleMessage("Créditos das Fotos")
   };
 }

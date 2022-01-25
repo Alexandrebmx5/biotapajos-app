@@ -30,7 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "catalago" : MessageLookupByLibrary.simpleMessage("Species Catalogs"),
     "comoConhecer" : MessageLookupByLibrary.simpleMessage("Distribution"),
     "coordenadas" : MessageLookupByLibrary.simpleMessage("Coordinate"),
-    "cor" : MessageLookupByLibrary.simpleMessage("Color"),
+    "cor" : MessageLookupByLibrary.simpleMessage("Description"),
     "criarUmaConta" : MessageLookupByLibrary.simpleMessage("Create Account"),
     "emConstrucao" : MessageLookupByLibrary.simpleMessage("still under construction"),
     "email" : MessageLookupByLibrary.simpleMessage("Email"),
@@ -99,6 +99,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "homeText2" : MessageLookupByLibrary.simpleMessage("leave your registration!"),
     "homeText3" : MessageLookupByLibrary.simpleMessage("News!"),
     "homeButton" : MessageLookupByLibrary.simpleMessage("Click here!"),
-    "creditImage": MessageLookupByLibrary.simpleMessage("Image Credits")
+    "creditImage": MessageLookupByLibrary.simpleMessage("Photo Credits")
   };
 }
