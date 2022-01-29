@@ -1,3 +1,4 @@
+import 'dart:typed_data';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:biotapajos_app/components/AppBar.dart';
 import 'package:biotapajos_app/components/Texts.dart';
@@ -6,6 +7,7 @@ import 'package:biotapajos_app/models/SpecieDetail.dart';
 import 'package:biotapajos_app/styles/Color.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:toast/toast.dart';
 
@@ -17,7 +19,7 @@ class SpeciesInformation extends StatefulWidget {
 class _SpeciesInformationState extends State<SpeciesInformation> {
   SpecieDetail specieDetail;
   bool isPlaying = false;
-  AudioPlayer audioPlayer = AudioPlayer();
+  AudioPlayer player = AudioPlayer();
   List<NetworkImage> _createListImages() {
     List<NetworkImage> netWorkImg = [];
     if (specieDetail == null) {
@@ -42,7 +44,6 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _setLanguage();
   }
@@ -58,14 +59,17 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
   _playSound() async {
     if (!isPlaying) {
       if (specieDetail.sound != null) {
-        int result = await audioPlayer.play(specieDetail.sound);
-        print(result);
+        final ByteData imageData =
+            await NetworkAssetBundle(Uri.parse(specieDetail.sound)).load("");
+        final Uint8List bytes = imageData.buffer.asUint8List();
+
+        int result = await player.playBytes(bytes);
         if (result == 1) {
           setState(() {
             isPlaying = true;
           });
         }
-        audioPlayer.onPlayerCompletion.listen((event) {
+        player.onPlayerCompletion.listen((event) {
           setState(() {
             isPlaying = false;
           });
@@ -75,7 +79,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
             duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
       }
     } else {
-      audioPlayer.stop();
+      player.stop();
       setState(() {
         isPlaying = false;
       });
@@ -106,15 +110,16 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: SizedBox(
                       height: constraints.maxHeight * 0.40,
                       width: constraints.maxWidth,
-                      child: specieDetail.img.isNotEmpty ?
-                      Carousel(images: _createListImages()) :
-                      Image.asset('images/logo_no_bg.png')),
+                      child: specieDetail.img.isNotEmpty
+                          ? Carousel(images: _createListImages())
+                          : Image.asset('images/logo_no_bg.png')),
                 ),
                 Container(
                   width: constraints.maxWidth,
                   child: Row(
                     children: [
-                      if(specieDetail.sound != null && specieDetail.sound != '')...[
+                      if (specieDetail.sound != null &&
+                          specieDetail.sound != '') ...[
                         Padding(
                           padding: const EdgeInsets.only(
                               top: 16.0, left: 16.0, bottom: 8.0),
@@ -150,28 +155,35 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
                   child: Container(
                       width: constraints.maxWidth,
                       child: Row(
                         children: [
-                          Text('${S.of(context).family} ', style: TextStyle(
-                          fontSize: 15, fontWeight: FontWeight.bold),),
-                          Text( specieDetail.family)
+                          Text(
+                            '${S.of(context).family} ',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
+                          Text(specieDetail.family)
                         ],
                       )),
                 ),
-                if(specieDetail.name != '')...[
+                if (specieDetail.name != '') ...[
                   Padding(
-                    padding:
-                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    padding: const EdgeInsets.only(
+                        left: 16.0, right: 16.0, top: 8.0),
                     child: Container(
                         width: constraints.maxWidth,
                         child: Row(
                           children: [
-                            Text('${S.of(context).nameCommon} ', style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold)),
-                            Expanded(child: Text(specieDetail.name.isEmpty ? '...' : specieDetail.name))
+                            Text('${S.of(context).nameCommon} ',
+                                style: TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.bold)),
+                            Expanded(
+                                child: Text(specieDetail.name.isEmpty
+                                    ? '...'
+                                    : specieDetail.name))
                           ],
                         )),
                   ),
@@ -201,7 +213,10 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Icon(Icons.public, color: Colors.black,),
+                          child: Icon(
+                            Icons.public,
+                            color: Colors.black,
+                          ),
                           text: S.of(context).comoConhecer,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -220,7 +235,11 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Image.asset('images/reproducao.jpeg', width: 30, height: 30,),
+                          child: Image.asset(
+                            'images/reproducao.jpeg',
+                            width: 30,
+                            height: 30,
+                          ),
                           text: S.of(context).reproducao,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -239,7 +258,10 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Icon(Icons.brightness_medium_sharp, color: Colors.black,),
+                          child: Icon(
+                            Icons.brightness_medium_sharp,
+                            color: Colors.black,
+                          ),
                           text: S.of(context).Atividade,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -254,18 +276,22 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Image.asset('images/regua.png', width: 20, height: 25,),
+                          child: Image.asset(
+                            'images/regua.png',
+                            width: 20,
+                            height: 25,
+                          ),
                           text: S.of(context).size,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
                   child: Container(
                     width: constraints.maxWidth,
                     child: _textNullSafety(data: specieDetail.howKnow),
@@ -277,7 +303,8 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Icon(Icons.invert_colors_on, color: Colors.black),
+                          child:
+                              Icon(Icons.invert_colors_on, color: Colors.black),
                           text: S.of(context).cor,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
@@ -292,18 +319,22 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Image.asset('images/semelhante.jpeg', width: 30, height: 30,),
+                          child: Image.asset(
+                            'images/semelhante.jpeg',
+                            width: 30,
+                            height: 30,
+                          ),
                           text: S.of(context).specieSimilar,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
                   child: Container(
                     width: constraints.maxWidth,
                     child: _textNullSafety(data: specieDetail.specieSimilar),
@@ -311,69 +342,81 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
                   child: Container(
                       width: constraints.maxWidth,
                       child: textIcon(
-                          child: Image.asset('images/arvore.png', width: 30, height: 25,),
+                          child: Image.asset(
+                            'images/arvore.png',
+                            width: 30,
+                            height: 25,
+                          ),
                           text: S.of(context).whereLive,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold))),
                 ),
                 Padding(
-                  padding:
-                  const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0, bottom: 20),
+                  padding: const EdgeInsets.only(
+                      left: 16.0, right: 16.0, top: 8.0, bottom: 20),
                   child: Container(
                     width: constraints.maxWidth,
                     child: _textNullSafety(data: specieDetail.whereLive),
                   ),
                 ),
-                if(specieDetail.diet != null)...[
+                if (specieDetail.diet != null) ...[
                   Padding(
-                    padding:
-                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    padding: const EdgeInsets.only(
+                        left: 16.0, right: 16.0, top: 8.0),
                     child: Container(
                         width: constraints.maxWidth,
                         child: textIcon(
-                            child: Image.asset('images/dieta.jpeg', width: 30, height: 25,),
+                            child: Image.asset(
+                              'images/dieta.jpeg',
+                              width: 30,
+                              height: 25,
+                            ),
                             text: S.of(context).dieta ?? '',
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.bold))),
                   ),
                   Padding(
-                    padding:
-                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0, bottom: 20),
+                    padding: const EdgeInsets.only(
+                        left: 16.0, right: 16.0, top: 8.0, bottom: 20),
                     child: Container(
                       width: constraints.maxWidth,
                       child: _textNullSafety(data: specieDetail.diet),
                     ),
                   ),
                 ],
-                if(specieDetail.venom != null )...[
+                if (specieDetail.venom != null) ...[
                   Padding(
-                    padding:
-                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    padding: const EdgeInsets.only(
+                        left: 16.0, right: 16.0, top: 8.0),
                     child: Container(
                         width: constraints.maxWidth,
                         child: textIcon(
-                            child: Image.asset('images/caveira.jpeg', width: 30, height: 25,),
+                            child: Image.asset(
+                              'images/caveira.jpeg',
+                              width: 30,
+                              height: 25,
+                            ),
                             text: S.of(context).venom ?? '',
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.bold))),
                   ),
                   Padding(
-                    padding:
-                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0, bottom: 20),
+                    padding: const EdgeInsets.only(
+                        left: 16.0, right: 16.0, top: 8.0, bottom: 20),
                     child: Container(
                       width: constraints.maxWidth,
                       child: _textNullSafety(data: specieDetail.venom),
                     ),
                   ),
                 ],
-                if(specieDetail.creditImage != null )...[
+                if (specieDetail.creditImage != null) ...[
                   Padding(
-                    padding:
-                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    padding: const EdgeInsets.only(
+                        left: 16.0, right: 16.0, top: 8.0),
                     child: Container(
                         width: constraints.maxWidth,
                         child: textIcon(
@@ -383,8 +426,8 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                                 fontSize: 15, fontWeight: FontWeight.bold))),
                   ),
                   Padding(
-                    padding:
-                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0, bottom: 20),
+                    padding: const EdgeInsets.only(
+                        left: 16.0, right: 16.0, top: 8.0, bottom: 20),
                     child: Container(
                       width: constraints.maxWidth,
                       child: _textNullSafety(data: specieDetail.creditImage),
