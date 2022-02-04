@@ -188,182 +188,198 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                         )),
                   ),
                 ],
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
-                      width: constraints.maxWidth,
-                      child: textIcon(
-                          child: Icon(Icons.help, color: Colors.black),
-                          text: S.of(context).voceSabia,
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold))),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
-                    width: constraints.maxWidth,
-                    child: _textNullSafety(data: specieDetail.youKnow),
+                if(specieDetail.youKnow != '')...[
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
+                        width: constraints.maxWidth,
+                        child: textIcon(
+                            child: Icon(Icons.help, color: Colors.black),
+                            text: S.of(context).voceSabia,
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold))),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
                       width: constraints.maxWidth,
-                      child: textIcon(
-                          child: Icon(
-                            Icons.public,
-                            color: Colors.black,
-                          ),
-                          text: S.of(context).comoConhecer,
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold))),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
-                    width: constraints.maxWidth,
-                    child: _textNullSafety(data: specieDetail.locations),
+                      child: _textNullSafety(data: specieDetail.youKnow),
+                    ),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
+                ],
+                if(specieDetail.locations != '')...[
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
+                        width: constraints.maxWidth,
+                        child: textIcon(
+                            child: Icon(
+                              Icons.public,
+                              color: Colors.black,
+                            ),
+                            text: S.of(context).comoConhecer,
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold))),
+                  ),
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
                       width: constraints.maxWidth,
-                      child: textIcon(
-                          child: Image.asset(
-                            'images/reproducao.jpeg',
-                            width: 30,
-                            height: 30,
-                          ),
-                          text: S.of(context).reproducao,
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold))),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
-                    width: constraints.maxWidth,
-                    child: _textNullSafety(data: specieDetail.reproduction),
+                      child: _textNullSafety(data: specieDetail.locations),
+                    ),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
+                ],
+                if(specieDetail.reproduction != '')...[
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
+                        width: constraints.maxWidth,
+                        child: textIcon(
+                            child: Image.asset(
+                              'images/reproducao.jpeg',
+                              width: 30,
+                              height: 30,
+                            ),
+                            text: S.of(context).reproducao,
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold))),
+                  ),
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
                       width: constraints.maxWidth,
-                      child: textIcon(
-                          child: Icon(
-                            Icons.brightness_medium_sharp,
-                            color: Colors.black,
-                          ),
-                          text: S.of(context).Atividade,
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold))),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
-                    width: constraints.maxWidth,
-                    child: _textNullSafety(data: specieDetail.activity),
+                      child: _textNullSafety(data: specieDetail.reproduction),
+                    ),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
+                ],
+                if(specieDetail.activity != '')...[
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
+                        width: constraints.maxWidth,
+                        child: textIcon(
+                            child: Icon(
+                              Icons.brightness_medium_sharp,
+                              color: Colors.black,
+                            ),
+                            text: S.of(context).Atividade,
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold))),
+                  ),
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
                       width: constraints.maxWidth,
-                      child: textIcon(
-                          child: Image.asset(
-                            'images/regua.png',
-                            width: 20,
-                            height: 25,
-                          ),
-                          text: S.of(context).size,
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold))),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
-                    width: constraints.maxWidth,
-                    child: _textNullSafety(data: specieDetail.howKnow),
+                      child: _textNullSafety(data: specieDetail.activity),
+                    ),
+                  )
+                ],
+                if(specieDetail.howKnow != '')...[
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
+                        width: constraints.maxWidth,
+                        child: textIcon(
+                            child: Image.asset(
+                              'images/regua.png',
+                              width: 20,
+                              height: 25,
+                            ),
+                            text: S.of(context).size,
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold))),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
                       width: constraints.maxWidth,
-                      child: textIcon(
-                          child:
-                              Icon(Icons.invert_colors_on, color: Colors.black),
-                          text: S.of(context).cor,
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold))),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
-                    width: constraints.maxWidth,
-                    child: _textNullSafety(data: specieDetail.color),
+                      child: _textNullSafety(data: specieDetail.howKnow),
+                    ),
+                  )
+                ],
+                if(specieDetail.color != '')...[
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
+                        width: constraints.maxWidth,
+                        child: textIcon(
+                            child:
+                            Icon(Icons.invert_colors_on, color: Colors.black),
+                            text: S.of(context).cor,
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold))),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
                       width: constraints.maxWidth,
-                      child: textIcon(
-                          child: Image.asset(
-                            'images/semelhante.jpeg',
-                            width: 30,
-                            height: 30,
-                          ),
-                          text: S.of(context).specieSimilar,
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold))),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
-                    width: constraints.maxWidth,
-                    child: _textNullSafety(data: specieDetail.specieSimilar),
+                      child: _textNullSafety(data: specieDetail.color),
+                    ),
+                  )
+                ],
+                if(specieDetail.specieSimilar != null)...[
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
+                        width: constraints.maxWidth,
+                        child: textIcon(
+                            child: Image.asset(
+                              'images/semelhante.jpeg',
+                              width: 30,
+                              height: 30,
+                            ),
+                            text: S.of(context).specieSimilar,
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold))),
                   ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
-                  child: Container(
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
                       width: constraints.maxWidth,
-                      child: textIcon(
-                          child: Image.asset(
-                            'images/arvore.png',
-                            width: 30,
-                            height: 25,
-                          ),
-                          text: S.of(context).whereLive,
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold))),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                      left: 16.0, right: 16.0, top: 8.0, bottom: 20),
-                  child: Container(
-                    width: constraints.maxWidth,
-                    child: _textNullSafety(data: specieDetail.whereLive),
+                      child: _textNullSafety(data: specieDetail.specieSimilar),
+                    ),
+                  )
+                ],
+                if(specieDetail.whereLive != '')...[
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
+                        width: constraints.maxWidth,
+                        child: textIcon(
+                            child: Image.asset(
+                              'images/arvore.png',
+                              width: 30,
+                              height: 25,
+                            ),
+                            text: S.of(context).whereLive,
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold))),
                   ),
-                ),
-                if (specieDetail.diet != null) ...[
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 16.0, right: 16.0, top: 8.0),
+                    child: Container(
+                      width: constraints.maxWidth,
+                      child: _textNullSafety(data: specieDetail.whereLive),
+                    ),
+                  )
+                ],
+                if (specieDetail.diet != null && specieDetail.diet != '') ...[
                   Padding(
                     padding: const EdgeInsets.only(
                         left: 16.0, right: 16.0, top: 8.0),
@@ -381,14 +397,14 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                        left: 16.0, right: 16.0, top: 8.0, bottom: 20),
+                        left: 16.0, right: 16.0, top: 8.0),
                     child: Container(
                       width: constraints.maxWidth,
                       child: _textNullSafety(data: specieDetail.diet),
                     ),
                   ),
                 ],
-                if (specieDetail.venom != null) ...[
+                if (specieDetail.venom != null && specieDetail.venom != '') ...[
                   Padding(
                     padding: const EdgeInsets.only(
                         left: 16.0, right: 16.0, top: 8.0),
@@ -406,14 +422,14 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                        left: 16.0, right: 16.0, top: 8.0, bottom: 20),
+                        left: 16.0, right: 16.0, top: 8.0),
                     child: Container(
                       width: constraints.maxWidth,
                       child: _textNullSafety(data: specieDetail.venom),
                     ),
                   ),
                 ],
-                if (specieDetail.creditImage != null) ...[
+                if (specieDetail.creditImage != null && specieDetail.creditImage != '') ...[
                   Padding(
                     padding: const EdgeInsets.only(
                         left: 16.0, right: 16.0, top: 8.0),
