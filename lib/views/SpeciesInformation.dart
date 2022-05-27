@@ -188,7 +188,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                         )),
                   ),
                 ],
-                if(specieDetail.youKnow != '')...[
+                if(specieDetail.youKnow != null && specieDetail.youKnow != '')...[
                   Padding(
                     padding:
                     const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
@@ -209,7 +209,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                     ),
                   ),
                 ],
-                if(specieDetail.locations != '')...[
+                if(specieDetail.locations != null && specieDetail.locations != '')...[
                   Padding(
                     padding:
                     const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
@@ -233,7 +233,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                     ),
                   ),
                 ],
-                if(specieDetail.reproduction != '')...[
+                if(specieDetail.reproduction != null && specieDetail.reproduction != '')...[
                   Padding(
                     padding:
                     const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
@@ -258,7 +258,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                     ),
                   ),
                 ],
-                if(specieDetail.activity != '')...[
+                if(specieDetail.activity != null && specieDetail.activity != '')...[
                   Padding(
                     padding:
                     const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
@@ -282,7 +282,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                     ),
                   )
                 ],
-                if(specieDetail.howKnow != '')...[
+                if(specieDetail.howKnow != null && specieDetail.howKnow != '')...[
                   Padding(
                     padding:
                     const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
@@ -307,7 +307,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                     ),
                   )
                 ],
-                if(specieDetail.color != '')...[
+                if(specieDetail.color != null && specieDetail.color != '')...[
                   Padding(
                     padding:
                     const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
@@ -329,7 +329,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                     ),
                   )
                 ],
-                if(specieDetail.specieSimilar != null)...[
+                if(specieDetail.specieSimilar != null && specieDetail.specieSimilar != '')...[
                   Padding(
                     padding:
                     const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
@@ -354,7 +354,7 @@ class _SpeciesInformationState extends State<SpeciesInformation> {
                     ),
                   )
                 ],
-                if(specieDetail.whereLive != '')...[
+                if(specieDetail.whereLive != null && specieDetail.whereLive != '')...[
                   Padding(
                     padding:
                     const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
